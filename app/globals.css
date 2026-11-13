@@ -1,0 +1,116 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif), serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+    line-height: 1.05;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+    line-height: 1.12;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  button, input, textarea, select {
+    font-family: var(--font-sans), sans-serif;
+  }
+
+  ::selection {
+    background: #c4a77f;
+    color: #29251f;
+  }
+}
+
+@layer components {
+  /* Elegant section headings */
+  .h-section {
+    font-family: var(--font-serif), serif;
+    @apply text-4xl sm:text-5xl md:text-6xl
+    text-center leading-[1.1] tracking-tight font-normal;
+  }
+
+  /* Primary buttons */
+  .btn-dark {
+    @apply inline-flex items-center justify-center
+    bg-ink text-white text-[10px] sm:text-[11px]
+    tracking-[0.2em] uppercase font-medium
+    px-7 sm:px-8 py-4
+    hover:bg-neutral-700 transition-all duration-300;
+  }
+
+  /* Secondary buttons */
+  .btn-line {
+    @apply inline-flex items-center justify-center
+    border border-ink text-[10px] sm:text-[11px]
+    tracking-[0.2em] uppercase font-medium
+    px-7 sm:px-8 py-4
+    hover:bg-ink hover:text-white transition-all duration-300;
+  }
+
+  /* Image placeholders */
+  .ph {
+    @apply bg-gradient-to-br from-[#e8d9d4] via-[#d8c3bc] to-[#c9aea5];
+  }
+
+  /* Premium body copy */
+  .text-body {
+    @apply text-sm sm:text-[14px] leading-7 sm:leading-8 text-muted;
+    font-weight: 400;
+    letter-spacing: 0.015em;
+  }
+
+  /* Small uppercase labels */
+  .text-eyebrow {
+    @apply text-[9px] sm:text-[10px]
+    tracking-[0.25em] uppercase font-medium;
+  }
+
+  /* Small descriptions */
+  .text-caption {
+    @apply text-xs sm:text-[13px] leading-6;
+  }
+
+  /* Elegant italic accent */
+  .text-editorial {
+    font-family: var(--font-serif), serif;
+    font-style: italic;
+    font-weight: 300;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
